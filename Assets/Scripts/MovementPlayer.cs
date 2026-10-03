@@ -3,47 +3,63 @@ using UnityEngine;
 public class MovementPlayer : MonoBehaviour
 {
     public float speed = 5f;
-    public float jumpForce = 4f;
+    public float jumpForce = 4.5f;
+
     private Rigidbody rb;
     private bool isGrounded;
     private bool jumpPressed;
+
+    public Transform cameraTransform;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
+
     void Update()
     {
-    if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-        jumpPressed = true;
+            jumpPressed = true;
         }
-    }   
+    }
+
     void FixedUpdate()
     {
-        float movementX = Input.GetAxisRaw("Horizontal");
         float movementZ = Input.GetAxisRaw("Vertical");
+        float movementX = Input.GetAxisRaw("Horizontal");
 
-        Vector3 movement = new Vector3(movementX, 0f, movementZ).normalized;
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 movement = forward * movementZ + right * movementX;
+
+        movement.Normalize();
+
         Vector3 movementAmount = movement * speed * Time.deltaTime;
+
         rb.MovePosition(rb.position + movementAmount);
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-        rb.AddForce(Vector3.up * jumpForce);
-        }
         if (jumpPressed && isGrounded)
         {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        jumpPressed = false;
-        }   
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jumpPressed = false;
+        }
     }
+
     void OnCollisionStay(Collision collision)
     {
-    isGrounded = true;
+        isGrounded = true;
     }
+
     void OnCollisionExit(Collision collision)
     {
-    isGrounded = false;
+        isGrounded = false;
     }
 }
