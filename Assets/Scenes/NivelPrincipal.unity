@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 115895237}
   - component: {fileID: 115895236}
   - component: {fileID: 115895235}
+  - component: {fileID: 115895239}
   m_Layer: 0
   m_Name: EscalonMovil01
   m_TagString: Untagged
@@ -436,13 +437,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115895234}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 3.72, z: 16.21}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -36.725636, y: 40.74453, z: 50.200245}
   m_LocalScale: {x: 2, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 176072675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &115895239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115895234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534f99bc4a5ffa94ba4b46d263838706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: 2
+  moveSpeed: 4
 --- !u!1 &131644539
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 4
+  jumpForce: 4.5
+  cameraTransform: {fileID: 963194228}
 --- !u!54 &160204559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -739,6 +755,56 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!1 &176072674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176072675}
+  - component: {fileID: 176072676}
+  m_Layer: 0
+  m_Name: EscalonesMoviles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &176072675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176072674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.165634, y: -37.02453, z: -33.990246}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 115895238}
+  - {fileID: 201683608}
+  - {fileID: 1934772471}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176072676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176072674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea0b4a9d1c739443a671a5595197627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step01: {fileID: 115895239}
+  step02: {fileID: 201683609}
+  step03: {fileID: 1934772472}
 --- !u!1 &201683604
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +817,7 @@ GameObject:
   - component: {fileID: 201683607}
   - component: {fileID: 201683606}
   - component: {fileID: 201683605}
+  - component: {fileID: 201683609}
   m_Layer: 0
   m_Name: EscalonMovil02
   m_TagString: Untagged
@@ -840,13 +907,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201683604}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87, y: 4.7200003, z: 16.21}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -34.295635, y: 41.74453, z: 50.200245}
   m_LocalScale: {x: 2, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 176072675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201683609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201683604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534f99bc4a5ffa94ba4b46d263838706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: 2
+  moveSpeed: 4
 --- !u!1 &376592368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1827,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1827,6 +1909,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 34.674, y: 68.243, z: 0.349}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09e9506bf9253f419382d66c4fbd496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 160204557}
+  offset: {x: 0, y: 5, z: -8}
+  mouseSensitivity: 500
 --- !u!1 &1066846408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3120,7 @@ GameObject:
   - component: {fileID: 1934772470}
   - component: {fileID: 1934772469}
   - component: {fileID: 1934772468}
+  - component: {fileID: 1934772472}
   m_Layer: 0
   m_Name: EscalonMovil03
   m_TagString: Untagged
@@ -3112,13 +3210,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934772467}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.69, y: 5.7200003, z: 16.21}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.475634, y: 42.74453, z: 50.200245}
   m_LocalScale: {x: 2, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 176072675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934772472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934772467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534f99bc4a5ffa94ba4b46d263838706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: 2
+  moveSpeed: 4
 --- !u!1 &2136913705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,9 +3349,7 @@ SceneRoots:
   - {fileID: 562492348}
   - {fileID: 805657760}
   - {fileID: 1366397846}
-  - {fileID: 115895238}
-  - {fileID: 201683608}
-  - {fileID: 1934772471}
+  - {fileID: 176072675}
   - {fileID: 1249361070}
   - {fileID: 1751542250}
   - {fileID: 131644540}
