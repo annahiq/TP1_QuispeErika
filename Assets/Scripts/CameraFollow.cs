@@ -23,6 +23,8 @@ public class CameraFollow : MonoBehaviour
             rotationY += mouseX;
             rotationX -= mouseY;
 
+            player.rotation = Quaternion.Euler(0f, rotationY, 0f);
+
             rotationX = Mathf.Clamp(rotationX, -20f, 60f);
         }
         else

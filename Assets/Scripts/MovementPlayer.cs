@@ -24,8 +24,9 @@ public class MovementPlayer : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
+        rb.angularVelocity = Vector3.zero;
+        
         float movementZ = Input.GetAxisRaw("Vertical");
         float movementX = Input.GetAxisRaw("Horizontal");
 
